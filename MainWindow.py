@@ -9,16 +9,24 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QHBoxLayout, QVBoxLayout
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        hbox=QHBoxLayout()
+        hbox.addStretch(1)
+        vbox=QVBoxLayout()
+        vbox.addStretch(1)
+
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1440, 900)
+
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(690, 170, 51, 41))
+
         self.pushButton.setStyleSheet("QPushButton{\n"
 "border:1px solid rgb(255,0,85);\n"
 "backgorund-color:rgb(254,0, 255);\n"
@@ -60,13 +68,14 @@ class Ui_MainWindow(object):
         self.textBrowser_7.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "REC"))
+        self.pushButton.setText(_translate("MainWindow", "REC")) #rec버튼
         self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
